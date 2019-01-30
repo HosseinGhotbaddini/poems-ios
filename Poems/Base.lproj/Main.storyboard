@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="X0s-zp-L6r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--لیست شاعران-->
+        <scene sceneID="F9I-8g-asA">
+            <objects>
+                <tableViewController id="HoX-pl-2rj" customClass="PoetTableViewController" customModule="Poems" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="egH-lH-Hqf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PoetsTableViewCell" rowHeight="40" id="d4Y-QS-Coc" customClass="PoetTableViewCell" customModule="Poems" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="40"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d4Y-QS-Coc" id="huQ-vW-JaK">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYW-kM-v4n">
+                                            <rect key="frame" x="16" y="5" width="343" height="29.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="CYW-kM-v4n" secondAttribute="bottom" constant="5" id="CWU-vD-T01"/>
+                                        <constraint firstItem="CYW-kM-v4n" firstAttribute="leading" secondItem="huQ-vW-JaK" secondAttribute="leading" constant="16" id="ewG-PN-CxU"/>
+                                        <constraint firstItem="CYW-kM-v4n" firstAttribute="top" secondItem="huQ-vW-JaK" secondAttribute="top" constant="5" id="tkI-k5-8My"/>
+                                        <constraint firstAttribute="trailing" secondItem="CYW-kM-v4n" secondAttribute="trailing" constant="16" id="z6E-U4-orr"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="CYW-kM-v4n" id="2eC-lq-g0J"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="PoetDescription" id="eic-nh-Dfl"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="HoX-pl-2rj" id="LXb-x9-Hkz"/>
+                            <outlet property="delegate" destination="HoX-pl-2rj" id="P6P-mi-lQz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="لیست شاعران" id="qWp-I4-woq"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T88-qw-Ypz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-614" y="107"/>
+        </scene>
+        <!--توضیحات-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Poems" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="توضیحاتی برای این شاعر ثبت نشده است." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQe-s1-UKn">
+                                <rect key="frame" x="16" y="74" width="343" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="uVF-Bz-340"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pQe-s1-UKn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="3MZ-MX-4jY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pQe-s1-UKn" secondAttribute="trailing" constant="16" id="PUV-K3-LTf"/>
+                            <constraint firstItem="pQe-s1-UKn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="RCr-2T-2eS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="توضیحات" id="qgx-PB-ocY">
+                        <barButtonItem key="leftBarButtonItem" title="شعرا &gt;" id="Xp4-TP-s6S">
+                            <connections>
+                                <action selector="backToPoetTable:" destination="BYZ-38-t0r" id="cSM-Ci-dXP"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="آثار" id="OW2-7P-rhj">
+                            <connections>
+                                <action selector="goToChoosePoemTable:" destination="BYZ-38-t0r" id="AcI-yt-oPv"/>
+                                <segue destination="mF2-67-LIu" kind="show" identifier="ShowAasaar" id="QtQ-YI-E8h"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="pQe-s1-UKn" id="NeD-8v-HRg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="895" y="107"/>
+        </scene>
+        <!--Choose Poem Table View Controller-->
+        <scene sceneID="uXX-Yy-Cf4">
+            <objects>
+                <tableViewController id="mF2-67-LIu" customClass="ChoosePoemTableViewController" customModule="Poems" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eJt-eS-rme">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChoosePoemTableViewCell" rowHeight="40" id="XcI-L3-5Mg" customClass="ChoosePoemTableViewCell" customModule="Poems" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="40"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XcI-L3-5Mg" id="T54-S7-5Wm">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4L-tI-IF6">
+                                            <rect key="frame" x="16" y="5" width="343" height="29.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKS-da-Zhk">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
+                                            <connections>
+                                                <segue destination="mF2-67-LIu" kind="show" identifier="GoToNextView" id="FbD-zs-ODT"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="pKS-da-Zhk" firstAttribute="top" secondItem="T54-S7-5Wm" secondAttribute="top" id="GYm-Ud-Nfy"/>
+                                        <constraint firstItem="l4L-tI-IF6" firstAttribute="leading" secondItem="T54-S7-5Wm" secondAttribute="leading" constant="16" id="PqT-j6-sKy"/>
+                                        <constraint firstAttribute="bottom" secondItem="l4L-tI-IF6" secondAttribute="bottom" constant="5" id="XGL-2b-JdV"/>
+                                        <constraint firstAttribute="trailing" secondItem="pKS-da-Zhk" secondAttribute="trailing" id="cLH-m2-d4D"/>
+                                        <constraint firstAttribute="bottom" secondItem="pKS-da-Zhk" secondAttribute="bottom" id="cRC-eg-Wkv"/>
+                                        <constraint firstItem="pKS-da-Zhk" firstAttribute="leading" secondItem="T54-S7-5Wm" secondAttribute="leading" id="gdK-il-ZVp"/>
+                                        <constraint firstAttribute="trailing" secondItem="l4L-tI-IF6" secondAttribute="trailing" constant="16" id="mfT-MM-H1T"/>
+                                        <constraint firstItem="l4L-tI-IF6" firstAttribute="top" secondItem="T54-S7-5Wm" secondAttribute="top" constant="5" id="s0Z-gD-cXR"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="goToNextViewButton" destination="pKS-da-Zhk" id="pna-HU-Bwb"/>
+                                    <outlet property="nameLabel" destination="l4L-tI-IF6" id="q6N-Yi-UAb"/>
+                                    <segue destination="kno-4S-PWI" kind="show" identifier="ShowThePoem" id="0gy-59-Hkx"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mF2-67-LIu" id="rO8-RH-QhB"/>
+                            <outlet property="delegate" destination="mF2-67-LIu" id="LOw-vM-tyP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ONC-x7-pfv">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="Ugr-JI-ecz">
+                            <connections>
+                                <action selector="backToPrevView:" destination="mF2-67-LIu" id="d10-AZ-XjC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aTz-sF-8YW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2325.5999999999999" y="106.59670164917542"/>
+        </scene>
+        <!--Poem Table View Controller-->
+        <scene sceneID="kcM-8g-dWk">
+            <objects>
+                <tableViewController id="kno-4S-PWI" customClass="PoemTableViewController" customModule="Poems" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="30" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1yO-Lg-Ql5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PoemTableViewCell" rowHeight="30" id="90l-wX-TtP" customClass="PoemTableViewCell" customModule="Poems" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="30"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="90l-wX-TtP" id="AgP-uN-CYT">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="29.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yd1-C9-jl3">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="29.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="yd1-C9-jl3" firstAttribute="leading" secondItem="AgP-uN-CYT" secondAttribute="leading" constant="16" id="Zww-jQ-WXt"/>
+                                        <constraint firstItem="yd1-C9-jl3" firstAttribute="top" secondItem="AgP-uN-CYT" secondAttribute="top" id="o55-8j-Un4"/>
+                                        <constraint firstAttribute="trailing" secondItem="yd1-C9-jl3" secondAttribute="trailing" constant="16" id="omD-ZB-Mew"/>
+                                        <constraint firstAttribute="bottom" secondItem="yd1-C9-jl3" secondAttribute="bottom" id="pQv-es-ceL"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="verseLabel" destination="yd1-C9-jl3" id="snz-eA-VWv"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kno-4S-PWI" id="Pv9-WW-j6C"/>
+                            <outlet property="delegate" destination="kno-4S-PWI" id="cnu-E5-CL6"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="azr-gF-xGa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3156" y="105.69715142428787"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DdT-zQ-4ck">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X0s-zp-L6r" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UEH-QO-MPm">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HoX-pl-2rj" kind="relationship" relationship="rootViewController" id="PBf-No-mPN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kle-Pl-mRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1410" y="107"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZSH-3i-g8g">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xwl-oU-PNo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WwH-BD-hDB">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wVE-LJ-OlB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X2U-p5-1JY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="114" y="-296"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Tva-QD-YsV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E7K-xb-Cue" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="adb-bs-n0p">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mF2-67-LIu" kind="relationship" relationship="rootViewController" id="RgD-ds-nsv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zn9-HY-wTe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1574" y="-296"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="QtQ-YI-E8h"/>
+        <segue reference="eic-nh-Dfl"/>
+    </inferredMetricsTieBreakers>
+</document>
