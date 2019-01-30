@@ -44,7 +44,14 @@ class PoemTableViewController: UITableViewController {
         }
 
         cell.verseLabel.text = verses[indexPath.row].text
-        for _ in 0 ..< verses[indexPath.row].position {
+        var position = verses[indexPath.row].position
+        if position < 0 {
+            position = 0
+        }
+        if position > 4 {
+            position = 4
+        }
+        for _ in 0 ..< position {
             cell.verseLabel.text = "             " + cell.verseLabel.text!
         }
 
